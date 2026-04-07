@@ -1,0 +1,53 @@
+body {
+    background: #f4efe9;
+    color: #3e2c23;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-nav {
+    background: linear-gradient(90deg, #4b2e2b, #6b4a3f);
+}
+
+.hero {
+    background: url('https://placehold.co/600x400') center/cover;
+    height: 1000px;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    border-bottom: 2px solid #d8c3a5;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 150px;
+}
+
+.custom-btn {
+    background: #6b8e23;
+    color: white;
+    border: none;
+}
+
+.custom-btn:hover {
+    background: #556b2f;
+}
+
+.product-card {
+    border: none;
+    transition: transform 0.2s;
+    margin-top: 25px;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+.custom-footer {
+    background: #4b2e2b;
+    color: white;
+    margin-top: 300px;
+}
+
+.card img {
+    height: 400px;
+    object-fit: cover;
+}
