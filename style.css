@@ -4,13 +4,49 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-.custom-nav {
-    background: linear-gradient(90deg, #4b2e2b, #6b4a3f);
+.navbar {
+    background-image: url("imgs/brown-concrete-wall-with-scratches-vector_53876-143109.png");
+    padding: 20px 40px;
+    border-bottom: 1px solid #6b4a45;
+}
+
+.navbar-brand {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #f5eee6 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #f5eee6 !important;
+    font-size: 17px;
+    margin-left: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    opacity: 0.7;
+}
+
+.navbar-nav .nav-link.active {
+    border-bottom: 2px solid #d6bfa7;
+}
+
+.navbar-toggler {
+    border-color: #f5eee6;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.container-fluid {
+    max-width: 1200px;
 }
 
 .hero {
     background: url('https://placehold.co/600x400') center/cover;
-    height: 1000px;
+    height: 900px;
 }
 
 .section-title {
