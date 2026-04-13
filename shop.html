@@ -1,86 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Shop</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Nut-Free Bakery</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Jost&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">ZBestGoodies</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+        <div class="header-inner">
+            <nav class="nav-left">
+                <a href="index.html">Home</a>
+                <a class="active" href="shop.html">Shop</a>
+            </nav>
 
-    <main class="container my-5">
-        <h2 class="mb-4 section-title">Shop</h2>
-
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card product-card">
-                    <img src="https://img1.wsimg.com/isteam/ip/0185be69-d6e8-434b-b766-f214437324d8/Cookie%20Cakes.jpg/:/cr=t:0%25,l:0.18%25,w:99.63%25,h:100%25/rs=w:360,h:360,cg:true"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>Cookie Cake</h5>
-                        <p>$25.00</p>
-                    </div>
-                </div>
+            <div class="logo">
+                <span class="logo-name">ZBestGoodies</span>
             </div>
 
-            <div class="col-md-4">
-                <div class="card product-card">
-                    <img src="https://img1.wsimg.com/isteam/ip/0185be69-d6e8-434b-b766-f214437324d8/Screenshot%202025-09-19%209.09.56%20AM.png/:/cr=t:0%25,l:6.56%25,w:86.89%25,h:100%25/rs=w:360,h:360,cg:true"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>Chocolate Chip Cookies</h5>
-                        <p>$12.99</p>
-                    </div>
+            <div class="nav-right">
+                <div class="nav-right-links">
+                    <a href="index.html#about-anchor">Our Story</a>
+                    <a href="contact.html">Contact</a>
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card product-card">
-                    <img src="https://img1.wsimg.com/isteam/ip/0185be69-d6e8-434b-b766-f214437324d8/Banana%20Bread.jpg/:/cr=t:0%25,l:0.9%25,w:98.21%25,h:100%25/rs=w:360,h:360,cg:true"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>Banana Bread</h5>
-                        <p>$10.99</p>
-                    </div>
+                <div class="nav-icons">
+                    <button class="icon-btn">🔍</button>
+                    <button class="icon-btn" onclick="showToast('Your cart is empty')">🛍</button>
                 </div>
             </div>
         </div>
-    </main>
+    </header>
 
-    <footer class="text-center py-3 custom-footer">
-        © 2026 Nut-Free Bakery
+    <div class="page-hero">
+        <span class="tag">🌿 Handcrafted with Care</span>
+        <h1>Our Collection</h1>
+        <div class="breadcrumb">Home <span>/</span> Shop</div>
+    </div>
+
+    <div class="shop-inner">
+
+        <div class="shop-toolbar">
+            <div class="filter-tabs">
+                <button class="ftab active" onclick="filterActive(this)">All Items</button>
+                <button class="ftab" onclick="filterActive(this)">Cookies</button>
+                <button class="ftab" onclick="filterActive(this)">Cakes</button>
+                <button class="ftab" onclick="filterActive(this)">Breads</button>
+            </div>
+            <span class="shop-count">3 Products</span>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="pcard">
+                <div class="pcard-img">🎂<span class="pcard-badge">Best Seller</span></div>
+                <div class="pcard-body">
+                    <div class="pcard-cat">Cookie Cakes</div>
+                    <div class="pcard-name">Oatmeal Chocolate Chip Cookie Cake</div>
+                    <div class="pcard-desc">A thick, rich cookie cake loaded with oats and chocolate chips.</div>
+                    <div class="pcard-foot">
+                        <span class="pcard-price">$14.99</span>
+                        <button class="btn-add" onclick="addToCart('Cookie Cake')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pcard">
+                <div class="pcard-img">🍪</div>
+                <div class="pcard-body">
+                    <div class="pcard-cat">Cookies</div>
+                    <div class="pcard-name">Chocolate Chip Cookies</div>
+                    <div class="pcard-desc">Classic chewy cookies baked fresh.</div>
+                    <div class="pcard-foot">
+                        <span class="pcard-price">$12.99</span>
+                        <button class="btn-add" onclick="addToCart('Cookies')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pcard">
+                <div class="pcard-img">🍞</div>
+                <div class="pcard-body">
+                    <div class="pcard-cat">Breads</div>
+                    <div class="pcard-name">Banana Bread</div>
+                    <div class="pcard-desc">Moist banana bread made with ripe bananas.</div>
+                    <div class="pcard-foot">
+                        <span class="pcard-price">$10.99</span>
+                        <button class="btn-add" onclick="addToCart('Banana Bread')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER (same as original) -->
+    <footer>
+        <div class="footer-grid">
+            <div class="f-brand">
+                <span class="logo-name">Nut-Free Bakery</span>
+                <p>Handcrafted nut-free baked goods made with love and care.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
