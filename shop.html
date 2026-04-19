@@ -12,6 +12,7 @@
 
 <body>
 
+    <div class="announce">🌿 &nbsp; GO TO CONTACT PAGE FOR CUSTOM ORDERS &nbsp; 🌿</div>
     <header>
         <div class="header-inner">
             <nav class="nav-left">
@@ -20,17 +21,13 @@
             </nav>
 
             <div class="logo">
-                <span class="logo-name">ZBestGoodies</span>
+                <span class="logo-name">Z Best Goodies</span>
             </div>
 
             <div class="nav-right">
                 <div class="nav-right-links">
                     <a href="index.html#about-anchor">Our Story</a>
                     <a href="contact.html">Contact</a>
-                </div>
-                <div class="nav-icons">
-                    <button class="icon-btn">🔍</button>
-                    <button class="icon-btn" onclick="showToast('Your cart is empty')">🛍</button>
                 </div>
             </div>
         </div>
@@ -56,41 +53,77 @@
 
         <div class="product-grid">
 
-            <div class="pcard">
-                <div class="pcard-img">🎂<span class="pcard-badge">Best Seller</span></div>
+            <div class="pcard" data-category="cookiecakes">
+                <div class="pcard-img">
+                    <img src="imgs/cookie-cake.jpg" alt="Cookie Cake" class="pcard-photo">
+                    <span class="pcard-badge">Best Seller</span>
+                </div>
                 <div class="pcard-body">
                     <div class="pcard-cat">Cookie Cakes</div>
-                    <div class="pcard-name">Oatmeal Chocolate Chip Cookie Cake</div>
-                    <div class="pcard-desc">A thick, rich cookie cake loaded with oats and chocolate chips.</div>
+                    <div class="pcard-name">Cookie Cake</div>
+                    <div class="pcard-desc">
+                        <p>Flavors: chocolate chip, double chocolate chip. Icing: chocolate or vanilla.</p>
+                        <a class="more-link" onclick="toggleDetails('d1')">More</a>
+                        <div id="d1" class="pcard-details hidden">
+                            <p>Includes your choice of chocolate or vanilla icing. Vanilla icing can be customized for
+                                color. Choose a custom simple design.</p>
+                        </div>
+                    </div>
                     <div class="pcard-foot">
-                        <span class="pcard-price">$14.99</span>
-                        <button class="btn-add" onclick="addToCart('Cookie Cake')">Add to Cart</button>
+                        <span class="pcard-price">12-inch — $25</span>
+                        <a class="btn-add" href="https://www.instagram.com/zbestgoodies/?hl=en" target="_blank"
+                            rel="noopener noreferrer">Order</a>
                     </div>
                 </div>
             </div>
 
-            <div class="pcard">
-                <div class="pcard-img">🍪</div>
+            <div class="pcard" data-category="cookies">
+                <div class="pcard-img">
+                    <img src="imgs/cookies.jpg" alt="Cookies" class="pcard-photo">
+                </div>
                 <div class="pcard-body">
                     <div class="pcard-cat">Cookies</div>
-                    <div class="pcard-name">Chocolate Chip Cookies</div>
-                    <div class="pcard-desc">Classic chewy cookies baked fresh.</div>
+                    <div class="pcard-name">Cookies</div>
+                    <div class="pcard-desc">
+                        <p>Flavors: chocolate chip, double chocolate chip.</p>
+                        <a class="more-link" onclick="toggleDetails('d2')">More</a>
+                        <div id="d2" class="pcard-details hidden">
+                            <ul class="pcard-list">
+                                <li>2 dozen — $18</li>
+                                <li>3 dozen — $24</li>
+                                <li>4 dozen — $30</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="pcard-foot">
-                        <span class="pcard-price">$12.99</span>
-                        <button class="btn-add" onclick="addToCart('Cookies')">Add to Cart</button>
+                        <span class="pcard-price">Starting at $18</span>
+                        <a class="btn-add" href="https://www.instagram.com/zbestgoodies/?hl=en" target="_blank"
+                            rel="noopener noreferrer">Order</a>
                     </div>
                 </div>
             </div>
 
-            <div class="pcard">
-                <div class="pcard-img">🍞</div>
+            <div class="pcard" data-category="breads">
+                <div class="pcard-img">
+                    <img src="imgs/banana-bread.jpg" alt="Banana Bread" class="pcard-photo">
+                </div>
                 <div class="pcard-body">
                     <div class="pcard-cat">Breads</div>
                     <div class="pcard-name">Banana Bread</div>
-                    <div class="pcard-desc">Moist banana bread made with ripe bananas.</div>
+                    <div class="pcard-desc">
+                        <p>Options: plain or chocolate chip.</p>
+                        <a class="more-link" onclick="toggleDetails('d3')">More</a>
+                        <div id="d3" class="pcard-details hidden">
+                            <ul class="pcard-list">
+                                <li>Plain — $12</li>
+                                <li>Chocolate chip — $14</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="pcard-foot">
-                        <span class="pcard-price">$10.99</span>
-                        <button class="btn-add" onclick="addToCart('Banana Bread')">Add to Cart</button>
+                        <span class="pcard-price">From $12</span>
+                        <a class="btn-add" href="https://www.instagram.com/zbestgoodies/?hl=en" target="_blank"
+                            rel="noopener noreferrer">Order</a>
                     </div>
                 </div>
             </div>
@@ -98,14 +131,44 @@
         </div>
     </div>
 
-    <!-- FOOTER (same as original) -->
     <footer>
         <div class="footer-grid">
             <div class="f-brand">
-                <span class="logo-name">Nut-Free Bakery</span>
-                <p>Handcrafted nut-free baked goods made with love and care.</p>
+                <span class="logo-name">Z Best Goodies</span>
+                <p>Handcrafted, allergen-aware baked goods made with love and care.</p>
+                <div class="f-social">
+                    <a class="fsoc" href="https://www.instagram.com/zbestgoodies/?hl=en" target="_blank"
+                        rel="noopener noreferrer">IG</a>
+                </div>
+            </div>
+
+            <div class="f-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="f-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Phone: (103) 455-2090</li>
+                    <li>Email: info@nutfreebakery.com</li>
+                </ul>
+            </div>
+
+            <div class="f-col">
+                <h4>Hours</h4>
+                <ul>
+                    <li>Mon–Fri: 8am–5pm</li>
+                    <li>Sat: 9am–3pm</li>
+                </ul>
             </div>
         </div>
+
+        <div class="footer-bottom">© 2026 Z Best Goodies — All rights reserved</div>
     </footer>
 
     <div class="toast" id="toast"></div>

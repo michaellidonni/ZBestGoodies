@@ -44,7 +44,6 @@ button {
     font-family: var(--sans);
 }
 
-/* ── ANNOUNCEMENT BAR ── */
 .announce {
     background: var(--espresso);
     color: var(--sand);
@@ -255,11 +254,11 @@ header {
 }
 
 .hero-emoji {
-    font-size: min(16vw, 190px);
     filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.55));
     animation: bob 7s ease-in-out infinite;
     position: relative;
     z-index: 1;
+    width: 90%;
 }
 
 @keyframes bob {
@@ -444,6 +443,27 @@ header {
     font-size: 7rem;
     position: relative;
     overflow: hidden;
+}
+
+/* If an <img> is placed inside .about-img, make it cover the area */
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Slightly smaller emoji on tighter screens */
+@media (max-width: 900px) {
+    .about-img {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-img {
+        font-size: 3.6rem;
+    }
 }
 
 .about-img::after {
@@ -700,11 +720,22 @@ header {
     gap: 24px;
 }
 
+/* Make all cards match height within the grid */
+.product-grid {
+    grid-auto-rows: 1fr;
+}
+
 .pcard {
     background: var(--white);
     border: 1px solid var(--border);
     overflow: hidden;
     transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.pcard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .pcard:hover {
@@ -739,6 +770,59 @@ header {
     padding: 22px;
 }
 
+.pcard-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.pcard-desc {
+    margin-bottom: 16px;
+}
+
+.pcard-desc p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.pcard-desc small {
+    color: var(--muted);
+    display: block;
+    margin-top: 6px;
+}
+
+.pcard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 6px;
+}
+
+.pcard-list li {
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+
+/* Small "more info" link and hidden details */
+.more-link {
+    font-size: 0.82rem;
+    color: var(--espresso);
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.pcard-details {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.hidden {
+    display: none;
+}
+
 .pcard-cat {
     font-size: 0.64rem;
     letter-spacing: 0.2em;
@@ -768,6 +852,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto;
+    padding-top: 12px;
+    gap: 12px;
+    border-top: 1px solid var(--border);
 }
 
 .pcard-price {
@@ -927,6 +1015,38 @@ header {
     font-size: 0.98rem;
     color: var(--espresso);
     line-height: 1.45;
+}
+
+/* Product image sizing: make all product photos uniform */
+.pcard-img {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pcard-img .pcard-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .pcard-img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pcard-img {
+        height: 140px;
+    }
 }
 
 .info-val small {

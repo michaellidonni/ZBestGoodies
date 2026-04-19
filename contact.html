@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+    <div class="announce">🌿 &nbsp; GO TO CONTACT PAGE FOR CUSTOM ORDERS &nbsp; 🌿</div>
     <header>
         <div class="header-inner">
             <nav class="nav-left">
@@ -20,7 +20,7 @@
             </nav>
 
             <div class="logo">
-                <span class="logo-name">ZBestGoodies</span>
+                <span class="logo-name">Z Best Goodies</span>
             </div>
 
             <div class="nav-right">
@@ -52,10 +52,19 @@
 
             <div class="field">
                 <label>Subject</label>
-                <select>
-                    <option>General Inquiry</option>
-                    <option>Order Question</option>
+                <select id="subject-select" onchange="subjectChanged(this.value)">
+                    <option value="general">General Inquiry</option>
+                    <option value="order">Order Question</option>
+                    <option value="custom">Custom Order</option>
                 </select>
+            </div>
+
+            <div id="custom-order-fields" class="hidden">
+                <div class="field"><label>Product / Item</label><input type="text"
+                        placeholder="e.g. Cookie Cake, 12-inch"></div>
+                <div class="field"><label>Details</label><textarea
+                        placeholder="Describe custom design, flavors, colors, date needed..."></textarea></div>
+                <div class="field"><label>Desired Date</label><input type="date"></div>
             </div>
 
             <div class="field"><label>Message</label><textarea></textarea></div>
@@ -90,9 +99,41 @@
     <footer>
         <div class="footer-grid">
             <div class="f-brand">
-                <span class="logo-name">Nut-Free Bakery</span>
+                <span class="logo-name">Z Best Goodies</span>
+                <p>Handcrafted, allergen-aware baked goods made with love and care.</p>
+                <div class="f-social">
+                    <a class="fsoc" href="https://www.instagram.com/zbestgoodies/?hl=en" target="_blank"
+                        rel="noopener noreferrer">IG</a>
+                </div>
+            </div>
+
+            <div class="f-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="f-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Phone: (103) 455-2090</li>
+                    <li>Email: info@nutfreebakery.com</li>
+                </ul>
+            </div>
+
+            <div class="f-col">
+                <h4>Hours</h4>
+                <ul>
+                    <li>Mon–Fri: 8am–5pm</li>
+                    <li>Sat: 9am–3pm</li>
+                </ul>
             </div>
         </div>
+
+        <div class="footer-bottom">© 2026 Z Best Goodies — All rights reserved</div>
     </footer>
 
     <div class="toast" id="toast"></div>
